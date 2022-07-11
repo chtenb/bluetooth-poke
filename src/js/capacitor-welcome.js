@@ -140,3 +140,18 @@ window.customElements.define(
     }
   }
 );
+
+document.addEventListener('DOMContentLoaded', function(){
+  const input = document.querySelector("body");
+  const submit = document.querySelector("#screen-shake");
+
+  submit.addEventListener("click", (e) => {
+      e.preventDefault();
+      input.classList.add("apply-shake");
+  });
+
+  input.addEventListener("animationend", (e) => {
+      input.classList.remove("apply-shake");
+  });
+  // do something
+});
